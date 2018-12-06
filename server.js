@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //define route to carrera
-app.use('/carrera', carrerasRoutes);
+app.use('/api/carrera', carrerasRoutes);
 
 // listen for requests
 app.listen(3000, () => {
