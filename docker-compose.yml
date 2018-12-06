@@ -2,6 +2,8 @@ version: "2"
 services:
   app:
     container_name: challenge
+    volumes:
+      - ./:/challenge
     restart: always
     build: .
     ports:
@@ -17,5 +19,6 @@ services:
       - "27017:27017"
 volumes:
   mongo_data:
+
      
        

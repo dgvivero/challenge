@@ -41,9 +41,9 @@ exports.findOne = (req, res) => {
 // Create a Carrera
 exports.create = (req, res) =>{
     // Validate request
-    if(!req.body.content) {
+    if(!req.body) {
         return res.status(400).send({
-            message: "Note content can not be empty"
+            message: "Carrera content can not be"
         });
     }
 
@@ -68,14 +68,42 @@ exports.create = (req, res) =>{
 
 
 exports.update = (req, res)=> {
-    res.send('NOT IMPLEMENTED:  create POST');
+    // Validate Request
+    if(!req.body) {
+        return res.status(400).send({
+            message: "Carrera content can not be empty"
+        } );
+    }
+
+    // Find and update it with the request body
+    Carrera.findByIdAndUpdate(req.params.carreraId, {
+        nombre: req.body.nombre || "Carrera",
+        titulo: req.body.titulo
+    }, {new: true})
+    .then(carrera => {
+        if(!carrera) {
+            return res.status(404).send({
+                message: "carrera not found with id " + req.params.carreraId
+            });
+        }
+        res.json(carrera);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "carrera not found with id " + req.params.carreraId
+            });                
+        }
+        return res.status(500).send({
+            message: "Error updating carrera with id " + req.params.carreraId
+        });
+    });
 };
 
 
 exports.delete = (req, res) => {
     Carrera.findByIdAndRemove(req.params.carreraId)
-    .then(note => {
-        if(!note) {
+    .then(carrera => {
+        if(!carrera) {
             return res.status(404).send({
                 message: "Carrera not found with id " + req.params.carreraId
             });
