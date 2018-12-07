@@ -4,8 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const db         = require('./config/db_config');
 
-//Import Controllers
+//Import Routes
 const carrerasRoutes = require('./routes/carreraRoutes');
+const materiaRoutes = require('./routes/materiaRoutes');
 
 // create express app
 const app = express();
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 //define route to carrera
 app.use('/api/carrera', carrerasRoutes);
+app.use('/api/materia', materiaRoutes);
 
 // listen for requests
 app.listen(3000, () => {

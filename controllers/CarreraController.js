@@ -1,5 +1,4 @@
 const Carrera        = require('../models/carrera');
-const Materia        = require('../models/materia');
 
 
 // Display list of all Carreras.
@@ -10,7 +9,7 @@ exports.findAll = (req, res) => {
         res.json(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while retrieving carreras."
+            message: err.message || "Some error occurred while retrieving carreras  ."
         });
     });
     
