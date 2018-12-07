@@ -5,9 +5,9 @@ const router = express.Router();
 const materiaCtrl = require('../controllers/MateriaController');
 
 /// CARRERA ROUTES ///
-    router.post('/', materiaCtrl.create);
     router.get('/', materiaCtrl.findAll);
     router.get('/:materiaId', materiaCtrl.findOne);
+	router.post('/', materiaCtrl.create);
     router.put('/:materiaId', materiaCtrl.update);
     router.delete('/:materiaId', materiaCtrl.delete);
 

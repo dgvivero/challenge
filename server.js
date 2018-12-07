@@ -5,8 +5,9 @@ const mongoose   = require('mongoose');
 const db         = require('./config/db_config');
 
 //Import Routes
-const carrerasRoutes = require('./routes/carreraRoutes');
-const materiaRoutes = require('./routes/materiaRoutes');
+const carrerasRoutes = require('./routes/CarreraRoutes');
+const materiaRoutes = require('./routes/MateriaRoutes');
+const alumnoRoutes = require('./routes/AlumnoRoutes');
 
 // create express app
 const app = express();
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 //define route to carrera
 app.use('/api/carrera', carrerasRoutes);
 app.use('/api/materia', materiaRoutes);
+app.use('/api/alumno', alumnoRoutes);
 
 // listen for requests
 app.listen(3000, () => {
