@@ -76,7 +76,7 @@ exports.update = (req, res)=> {
 
     // Find and update it with the request body
     Carrera.findByIdAndUpdate(req.params.carreraId, {
-        nombre: req.body.nombre || "Carrera",
+        nombre: req.body.nombre,
         titulo: req.body.titulo
     }, {new: true})
     .then(carrera => {
@@ -100,7 +100,7 @@ exports.update = (req, res)=> {
 
 
 exports.delete = (req, res) => {
-    Carrera.findByIdAndRemove(req.params.carreraId)
+    Carrera.findByIdAndDelete(req.params.carreraId)
     .then(carrera => {
         if(!carrera) {
             return res.status(404).send({
