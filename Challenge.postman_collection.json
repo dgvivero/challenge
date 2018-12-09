@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "82331e40-799f-4d02-b2fc-f4f784b72273",
+		"name": "Challenge",
+		"description": "Test case for challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CarreraEntity",
+			"item": [
+				{
+					"name": "getAllCarreras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/carrera",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"carrera"
+							]
+						},
+						"description": "List all carreras"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCarrera",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/carrera/5c081bbd176b8b0011a37344",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"carrera",
+								"5c081bbd176b8b0011a37344"
+							]
+						},
+						"description": "Delete carrera"
+					},
+					"response": []
+				},
+				{
+					"name": "createCarrera",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"historia\",\n    \"titulo\": \"Licenciatura en historia\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/carrera",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"carrera"
+							]
+						},
+						"description": "Create carrera"
+					},
+					"response": []
+				},
+				{
+					"name": "updateCarrera",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Matematicas\",\n    \"titulo\": \"Licenciatura en Matematicas\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/carrera/5c09729b02548c00242147df",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"carrera",
+								"5c09729b02548c00242147df"
+							]
+						},
+						"description": "Update a Carrera with carreraId"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MateriaEntity",
+			"item": [
+				{
+					"name": "getAllMaterias",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/materia",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"materia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMateriabyId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/materia/5c0a82b0bc7b87002484d6e3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"materia",
+								"5c0a82b0bc7b87002484d6e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createMateria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Analisis MAtematico I\",\n    \"cargaHoraria\": 40,\n    \"carreras\": [\n        \"5c09727002548c00242147de\",\n        \"5c09729b02548c00242147df\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/materia",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"materia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMateria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Analisis MAtematico I\",\n    \"cargaHoraria\": 35,\n    \"carreras\": [\n        \"5c09727002548c00242147de\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/materia/5c0a82b0bc7b87002484d6e3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"materia",
+								"5c0a82b0bc7b87002484d6e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMateria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/materia/5c0a82b0bc7b87002484d6e3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"materia",
+								"5c0a82b0bc7b87002484d6e3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Materia CRUD"
+		},
+		{
+			"name": "AlumnoEntity",
+			"item": [
+				{
+					"name": "getAllAlumnos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAlumnoById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAlumno",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nombre\"   :\"nombre, apellido\",\r\n    \"fecha\"    : \"2018-12-07T00:00:00.00Z\",\r\n\t\"direccion\"  : {\r\n        \"calle\"  : \"Avda. Rivadavia, 600\",\r\n        \"ciudad\" : \"CABA\",\r\n        \"provincia\"  : \"CABA\",\r\n        \"cpostal\": \"1015\"\r\n    },\r\n\t\"carrera\"  :\"5c09727002548c00242147de\",\r\n\t\"materias\" :[]\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAlumno",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Pepe, Grillo\",\n    \"fecha\": \"2018-12-07T00:00:00.000Z\",\n    \"carrera\": \"5c09727002548c00242147de\",\n    \"direccion\": {\n        \"calle\": \"Avda. Rivadavia, 600\",\n        \"ciudad\": \"CABA\",\n        \"prov\": \"prov\",\n        \"cpostal\": 1015\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno/5c0c166eea2b70002f8941f1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno",
+								"5c0c166eea2b70002f8941f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAlumnoById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno/5c0c166eea2b70002f8941f1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno",
+								"5c0c166eea2b70002f8941f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMateriaCursada",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n\t\"materia\": \"5c0a95b14f27f70025e7596d\",\n\t\"cursada\": true,\n\t\"nota\": 5\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno/5c0d50418dc3ee0024c445e6/materia/5c0d528bf2b1c900250183c3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno",
+								"5c0d50418dc3ee0024c445e6",
+								"materia",
+								"5c0d528bf2b1c900250183c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMateriaCursada",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno/5c0c166eea2b70002f8941f1/materia/5c0d2c3d6e4ea90024785001",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno",
+								"5c0c166eea2b70002f8941f1",
+								"materia",
+								"5c0d2c3d6e4ea90024785001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMateriaCursada",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"materia\":\"5c0a95b14f27f70025e7596d\",\n  \"cursada\":true,\n  \"nota\":8\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/alumno/5c0d50418dc3ee0024c445e6/materia",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumno",
+								"5c0d50418dc3ee0024c445e6",
+								"materia"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
