@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const CarreraSchema = new Schema({
-    nombre          : String,
+    nombre          : {type:String, required: true,  unique: true},
     titulo          : String
 });
 

@@ -10,8 +10,8 @@ const alumnoCtrl = require('../controllers/AlumnoController');
 	router.post('/', alumnoCtrl.create);
 	router.post('/:alumnoId/materia', alumnoCtrl.addMateria);
     router.put('/:alumnoId', alumnoCtrl.update);
-	//router.put('/:alumnoId/materia/:materiaId', alumnoCtrl.updateMateria);
+	router.put('/:alumnoId/materia/:materiaId', alumnoCtrl.updateMateria);
     router.delete('/:alumnoId', alumnoCtrl.delete);
-	//router.delete('/:alumnoId/materia/:materiaId', alumnoCtrl.removeMateria);
+	router.delete('/:alumnoId/materia/:materiaId', alumnoCtrl.removeMateria);
 
 module.exports = router;

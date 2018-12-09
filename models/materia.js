@@ -3,8 +3,8 @@ const mongoose  = require('mongoose');
 const Schema    = mongoose.Schema;
 
 const MateriaSchema = new Schema({
-    nombre          : String, 
-    cargaHoraria    : { type: Number, min: 1, required: true },
+    nombre          : {type: String, required: true,  unique: true}, 
+    cargaHoraria    : {type: Number, min: 1, required: true },
 	carreras        :[{type: Schema.Types.ObjectId, ref: "Carrera"}]
 });
 

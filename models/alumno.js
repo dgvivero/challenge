@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const AlumnoSchema = new Schema({
-    nombre   : {type: String, required: true},
+    nombre   : {type: String, required: true,  unique: true},
     fecha    : Date,
 	direccion  : {
         calle  : String,
