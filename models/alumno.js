@@ -8,13 +8,10 @@ const AlumnoSchema = new Schema({
 	direccion  : {
         calle  : String,
         ciudad : String,
-        provincia  : String,
+        prov   : String,
         cpostal: Number
     },
-	carrera  : {
-		nombre          : String,
-		titulo          : String
-    },
+	carrera  : { type: Schema.Types.ObjectId, ref: 'Carrera', required: true },
 	materias :[{type: Schema.Types.ObjectId, ref: "MateriaCursada"}]
 });
 
