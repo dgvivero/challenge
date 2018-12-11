@@ -1,20 +1,23 @@
-version: "2"
+version: "3"
+
 services:
-  app:
-    container_name: challenge
+  rest:
+    image: node:latest 
     volumes:
       - ./:/challenge
-    restart: always
-    build: .
+    working_dir: /challenge
+    environment:
+      NODE_ENV: development  
+    depends_on:
+      - mongo
     ports:
       - "3000:3000"
-    links:
-      - mongo
+    command: npm run dev
+    
   mongo:
-    container_name: mongo
     image: mongo
     volumes:
-      - mongo_data:/data/db
+     - mongo_data:/data/db
     ports:
       - "27017:27017"
 volumes:
